@@ -27,16 +27,16 @@ modulename = 'cher'
 
 config =
   host: 'localhost'
-  username: 'example'
+  userId: 'example'
   password: 'example'
   ssl: true
 
 config.ssl = true if process.env.HUBOT_CHERWELL_SSL
 config.host = process.env.HUBOT_CHERWELL_HOST if process.env.HUBOT_CHERWELL_HOST
-config.username = process.env.HUBOT_CHERWELL_USER if process.env.HUBOT_CHERWELL_USER
+config.userId = process.env.HUBOT_CHERWELL_USERID if process.env.HUBOT_CHERWELL_USERID
 config.password = process.env.HUBOT_CHERWELL_PASS if process.env.HUBOT_CHERWELL_PASS
 
-unless config.username == "example"
+unless config.userId == "example"
   cher.connect config
 
 GetBusinessObjectByPublicId = (robot, msg, args) ->

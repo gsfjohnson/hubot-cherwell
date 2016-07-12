@@ -48,7 +48,7 @@ GetBusinessObjectByPublicId = (robot, msg, args) ->
       robot.logger.info "#{msgout} (#{err}) [#{msg.envelope.user.name}]"
       return robot.send {room: msg.envelope.user.name}, "#{msgout}, check hubot log for details"
 
-    if res is null
+    if res is null or !res.ShortDescription
       msgout = "#{moduledesc}: no result for `#{JSON.stringify(args)}`"
       robot.logger.info "#{msgout} [#{msg.envelope.user.name}]"
       return msg.reply msgout
@@ -57,10 +57,12 @@ GetBusinessObjectByPublicId = (robot, msg, args) ->
     r.push "ShortDesc: #{res.ShortDescription.substring 0, 300}"
     r.push "Created: #{res.CreatedDateTime}"
     r.push "LastModified: #{res.LastModifiedDateTime}"
-    r.push "Closed: #{res.losedDateTime}"
-    r.push "Svc/cat/subcat: #{res.Service} / #{res.Category} / #{res.Subcategory}"
+    r.push "Closed: #{res.ClosedDateTime}"
+    r.push "Service: #{res.Service}"
+    r.push "Category: #{res.Category} -> #{res.Subcategory}"
     r.push "Owned by: #{res.OwnedBy} (#{res.OwnedByTeam})"
-    r.push "Desc: #{res.Description.substring 0, 2000}"
+    r.push ""
+    r.push "#{res.Description.substring 0, 2000}"
     out = r.join "\n"
 
     msgout = "#{moduledesc}: ```#{out}```"

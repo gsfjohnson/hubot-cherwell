@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "coffee-script": "~1.7"
-    ,"bcprotapi": "git+ssh://github.alaska.edu/gfjohnson/node-cheroapjs.git#master"
+    ,"cheroapjs": "git+ssh://github.alaska.edu/gfjohnson/node-cheroapjs.git#master"
   },
   "devDependencies": {
     "mocha": "*",

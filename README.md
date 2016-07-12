@@ -1,4 +1,4 @@
-# hubot-proteusdns
+# hubot-cherwell
 
 Hubot plugin to interact with Cherwell.
 
@@ -32,5 +32,5 @@ Cherwell will be queried and when available the results will be provided.
 
 ## Configuration
 
-It is necessary to procure an api username and password from your proteus administrator. Once obtained, set the `HUBOT_PROTEUSDNS_URL`, `HUBOT_PROTEUSDNS_USER`, and `HUBOT_PROTEUSDNS_PASS` environment variables.
+It is necessary to procure an api username and password from your proteus administrator. Once obtained, set the `HUBOT_CHERWELL_URL`, `HUBOT_CHERWELL_USER`, and `HUBOT_CHERWELL_PASS` environment variables.
 
